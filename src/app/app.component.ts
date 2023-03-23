@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { interval, take } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,10 +23,13 @@ export class AppComponent implements OnInit {
   @ViewChild('arrowToDown') arrowToDown: ElementRef;
   @ViewChild('arrowToUp') arrowToUp: ElementRef;
   state: string = 'inactive';
+  messageDays: string;
   constructor(private renderer2: Renderer2) { }
 
   ngOnInit(): void {
     this.listener();
+    setInterval(this.missingDays, 3600000)
+    this.missingDays();
   };
 
   over(){
@@ -45,6 +49,24 @@ export class AppComponent implements OnInit {
         this.renderer2.setStyle(this.arrowToUp.nativeElement, 'display', 'none');
       }
     })
+  }
+
+  missingDays(): void{
+    const today = new Date();
+    const weddingDate = new Date("2023-12-16");
+    let msegDay = 1000 * 60 * 60 * 24;
+    console.log(today.getTime())
+    if(today.getMonth() == weddingDate.getMonth() && today.getDate() > weddingDate.getDate()){
+      weddingDate.setFullYear(weddingDate.getFullYear() + 1)
+    }
+    let months = weddingDate.getMonth() - today.getMonth();
+    let days = Math.ceil((weddingDate.getTime() - today.getTime()) / (msegDay));
+
+    this.messageDays = `Faltan ${months} meses y ${days} días hasta el 16 de diciembre de 2023`;
+
+    // let msegMinute = 1000 * 60;
+    // let minute = Math.ceil((weddingDate.getTime() - today.getTime()) / msegMinute)
+    // console.log("Minutos: " + minute)
   }
 
   ngOnDestroy(): void {
