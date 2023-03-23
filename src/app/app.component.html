@@ -1,0 +1,24 @@
+<app-header></app-header>
+<app-carousel></app-carousel>
+<div data-aos="fade-right">
+  <app-about></app-about>
+</div>
+<div data-aos="flip-left">
+  <app-confirmation></app-confirmation>
+</div>
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+  <app-map></app-map>
+</div>
+
+<app-footer></app-footer>
+
+<!-- Heartbeat -->
+  <i [@aniHeart]="state" (mouseover)='over()' #heart class="fa fa-regular fa-heart scroll-to-heart"></i>
+
+<!-- Scroll to Bottom -->
+  <i #arrowToDown class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+<!-- Back to Top -->
+<a href="#home" #arrowToUp class="btn btn-lg btn-outline-primary back-to-top" style="display: none;">
+  <i class="fa fa-angle-double-up"></i>
+</a>
