@@ -51,7 +51,7 @@ body {
 
 .back-to-top {
   position: fixed;
-  /* display: none; */
+  display: none;
   text-align: center;
   right: 30px;
   bottom: 30px;
@@ -72,7 +72,7 @@ body {
   position: fixed;
   width: 20px;
   left: calc(50%);
-  bottom: 210px;
+  bottom: 190px;
   z-index: 11;
   animation: pulse-border 1500ms ease-out infinite;
 }

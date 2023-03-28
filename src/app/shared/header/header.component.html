@@ -1,6 +1,6 @@
   <nav [@fade]="fade" class="navbar fixed-top navbar-expand-lg navbar-light bg-light py-3" style="display: none;">
     <div class="container-fluid">
-      <a class="navbar-brand d-block d-lg-none" href="#home">
+      <a class="navbar-brand d-block d-lg-none" [routerLink]="['/']" fragment="home">
         <h1 class="font-secondary text-black mb-2">Carla <span class="text-primary">&</span> Matías</h1>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -10,10 +10,13 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav ml-auto py-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/']" fragment="home">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">Sobre nosotros</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/']" fragment="countdown">Cuánto falta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']" fragment="about">Sobre nosotros</a>
           </li>
         </ul>
         <a class="navbar-brand d-none d-lg-block mx-4" href="#">
@@ -21,10 +24,10 @@
         </a>
         <ul class="navbar-nav mr-auto py-0">
           <li class="nav-item">
-            <a class="nav-link" href="#confirmation">Asistencia</a>
+            <a class="nav-link" [routerLink]="['/']" fragment="confirmation">Asistencia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#mapa">Cómo llegar</a>
+            <a class="nav-link" [routerLink]="['/']" fragment="mapa">Cómo llegar</a>
           </li>
         </ul>
       </div>

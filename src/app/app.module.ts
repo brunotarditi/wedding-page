@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { MapComponent } from './pages/map/map.component';
+import { CountdownComponent } from './pages/countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MapComponent } from './pages/map/map.component';
     FooterComponent,
     AboutComponent,
     ConfirmationComponent,
-    MapComponent
+    MapComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

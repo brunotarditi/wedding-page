@@ -1,46 +1,19 @@
 <app-header></app-header>
-<app-carousel></app-carousel>
-<div class="row">
-  <div class="col-md-12 text-center">
-    <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Cuánto falta</h6>
-  </div>
-</div>
-<div class="container-fluid d-flex justify-content-center" data-aos="zoom-in">
-  <div class="row ">
-    <div class="col m-2 p-5 border rounded " >
-      <div #circleD class="circle-progress">
-        <span class="progress-value">{{days}}</span>
-      </div>
-      <span class="text">Días</span>
-    </div>
-    <div class="col m-2 p-5 border rounded">
-      <div #circleH class="circle-progress">
-        <span class="progress-value">{{hours}}</span>
-      </div>
-      <span class="text">Horas</span>
-    </div>
-    <div class="col m-2 p-5 border rounded">
-      <div #circleM class="circle-progress">
-        <span class="progress-value">{{minutes}}</span>
-      </div>
-      <span class="text">Minutos</span>
-    </div>
-    <div class="col m-2 p-5 border rounded">
-      <div #circleS class="circle-progress">
-        <span class="progress-value">{{seconds}}</span>
-      </div>
-      <span class="text">Segundos</span>
-    </div>
-  </div>
+<div id="home">
+  <app-carousel></app-carousel>
 </div>
 
-<div data-aos="fade-right">
+<div id="countdown" data-aos="zoom-in">
+  <app-countdown></app-countdown>
+</div>
+<div data-aos="fade-right" id="about">
   <app-about></app-about>
 </div>
-<div data-aos="flip-left">
+
+<div data-aos="flip-left" id="confirmation">
   <app-confirmation></app-confirmation>
 </div>
-<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="mapa">
   <app-map></app-map>
 </div>
 
@@ -53,6 +26,6 @@
 <i #arrowToDown class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
 
 <!-- Back to Top -->
-<a href="#home" #arrowToUp class="btn btn-lg btn-outline-primary back-to-top" style="display: none;">
+<a [routerLink]="['/']" fragment="home" #arrowToUp class="btn btn-lg btn-outline-primary back-to-top" style="display: none;">
   <i class="fa fa-angle-double-up"></i>
 </a>
